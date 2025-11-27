@@ -89,17 +89,21 @@ The deadline for the final project submission is 28th November 2025, 23:59 IST**
 
  ## Project Allocation
 |     Students                            | Project                |  Mentor TA    |
-|:---------------------------:|:-----------------------------:|:------------------:|
+|:--------------------------------------:|:-----------------------------:|:------------------:|
+| --- | [Project 1 : Medical Transcription Analysis](#project-1--medical-transcription-analysis) | --- |
+| Aryan Kumar (25AG61R02), Suyash Gadage (25AG61R03) | [Project 2 : Agriculture Crop Production Analysis](#project-2--agriculture-crop-production-analysis) | Rupam |
+| Abishek Nanda 25MM60001, Mohammed Shabeeb 25MM60002, Vipin Sankar 25MM60004 | [Project 3 : Medical Image Visualization and Analysis](#project-3--medical-image-visualization-and-analysis) | Rupam |
+| Himanshu (25AG61R15), Raj Shahi (25AG61R10) | [Project 4 : Impact of Soil Quality on Crop Growth Analysis](#project-4--impact-of-soil-quality-on-crop-growth-analysis) | Manali |
+| Ashok Chaudhary (25AG61R17), Sirvi Kamlesh (25AG61R12) | [Project 5 : Plant Disease Analysis Using Leaf Image Data](#project-5--plant-disease-analysis-using-leaf-image-data) | Sanchita |
+| 25MM91R04, 25MM91R05 (Nabanita Chatterjee, Madhurima Majumdar)  | [Project 6 : PCOS Data Analysis and Visualization](#project-6--PCOS-data-analysis-and-visualization) | Sanchita |
+| --- | [Project 7 : Mushroom Edibility Classification Using Data Analysis and Visualization](#project-7--mushroom-edibility-classification-using-data-analysis-and-visualization) | --- |
+| --- | [Project 8 : Predicting Depression Risk and Recovery Using Clinical and Mindfulness Data](#project-8--predicting-depression-risk-and-recovery-using-clinical-and-mindfulness-data) | --- |
+| --- | [Project 9 : Exploring Glucose, Heart Rate, and Activity Patterns in Personalized Nutrition](#project-9--monitoring-glucose-heart-rate-and-activity-patterns-in-personalized-nutrition) | --- |
+| Yogesh Singh (25MM60S01), Rick Maity (25MM60003), and Sushobhon Ghosh (25MM60A01) | Project 10 : Hospital Management Information System (HMIS), specifically for the Outpatient Department | Manali |
 
-|  | [Project 1 : Medical Transcription Analysis](#project-1--medical-transcription-analysis) |  |
-|  | [Project 2 : Agriculture Crop Production Analysis](#project-2--agriculture-crop-production-analysis) |  |
-|  | [Project 3 : Medical Image Visualization and Analysis](#project-3--medical-image-visualization-and-analysis) |  |
-|  | [Project 4 : Impact of Soil Quality on Crop Growth Analysis](#project-4--impact-of-soil-quality-on-crop-growth-analysis) |  |
-|  | [Project 5 : Plant Disease Analysis Using Leaf Image Data](#project-5--plant-disease-analysis-using-leaf-image-data) |  |
-|  | [Project 6 : PCOS Data Analysis and Visualization](#project-6--PCOS-data-analysis-and-visualization) |  |
-|  | [Project 7 : Mushroom Edibility Classification Using Data Analysis and Visualization](#project-7--mushroom-edibility-classification-using-data-analysis-and-visualization) |  |
-|  | [Project 8 : Predicting Depression Risk and Recovery Using Clinical and Mindfulness Data](#project-8--predicting-depression-risk-and-recovery-using-clinical-and-mindfulness-data) |  |
-|  | [Project 9 : Exploring Glucose, Heart Rate, and Activity Patterns in Personalized Nutrition](#project-9--monitoring-glucose-heart-rate-and-activity-patterns-in-personalized-nutrition) | |
+
+
+
 
 
 ## Projects
