@@ -70,13 +70,10 @@ def clean_dataset_3(df):
     # Since this is descriptive data, we don't want to delete rows, just label them.
     df = df.fillna("Unknown")
 
-    # 4. Clean 'Crop' column to match other files (e.g. "Paddy" vs "Rice")
-    # In df2 it is "Rice", here it is "Paddy". Let's standardize to "Rice" if needed.
-    # For now, we just strip spaces.
+    # 4. Clean 'Crop' column
+    # we just strip spaces.
     if 'Crop' in df.columns:
         df['Crop'] = df['Crop'].str.strip()
-        # Optional: Standardize naming if you want strict matching
-        # df['Crop'] = df['Crop'].replace({'Paddy': 'Rice'})
 
     return df
 
@@ -85,7 +82,6 @@ def clean_dataset_4(df):
     Specific cleaning for Dataset 4.
     """
     # 1. Drop completely empty rows AND create a fresh copy
-    # Adding .copy() fixes the SettingWithCopyWarning!
     df = df.dropna(how='all').copy()
 
     # 2. Clean 'Crop' column (remove spaces)
