@@ -260,11 +260,11 @@ For this project, we used these primary visualisation techniques:
 
 Feature distribution  visualisations  help  in  analysing  how financial metrics are distributed across different crops. 
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.003.jpeg)
+![](Dataset1_Cost_by_Crop.png)
 
 Fig 4.1. Average Cost of Cultivation 
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.004.jpeg)
+![](Dataset2_State_Yield.png)
 
 Fig 4.2. Top High-Yielding Crops & their States Code Implementation: 
 
@@ -293,21 +293,21 @@ def plot\_dataset\_2(df):
 - Plots Trends (All Years) for Production, Area, and Yield.
 - Selects Top 3 based on their ALL-TIME Highest value. sns.lineplot(data=melted, x='Year', y='Production', hue='Crop') plt.title('Top 3 Crops (All-Time): Production Trend')
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.005.jpeg)
+![](Dataset2_Production_Top3.png)
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.006.jpeg)
+![](Dataset2_Production_Bottom3.png)
 
 Fig 4.3. Top & Bottom Production Trend 
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.007.jpeg)
+![](Dataset2_Area_Top3.png)
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.008.jpeg)
+![](Dataset2_Area_Bottom3.png)
 
 Fig 4.4. Top & Bottom Area Trend 
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.009.jpeg)
+![](Dataset2_Yield_Top3.png)
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.010.jpeg)
+![](Dataset2_Yield_Bottom3.png)
 
 Fig 4.5. Top & Bottom Yield Trend 
 
@@ -319,15 +319,15 @@ The time series plot captures the "Onion Boom" of 2010. The spike upward in the 
 
 We visualise sectoral indices and genetic variety counts to understand the macro-economic shifts and research focus. 
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.011.jpeg)
+![](Dataset3_Variety_Counts.png)
 
 Fig 4.6. Variety per Crop 
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.012.jpeg)
+![](Dataset4_Growth_Bar.png)
 
 Fig 4.7. Total Index Growth 
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.013.jpeg)
+![](Dataset4_Trends.png)
 
 Fig 4.8. Total Index Growth (Trend) Code Implementation: 
 
@@ -389,3 +389,4 @@ Future Scope:
 - Predictive Modelling: Employing machine learning (example: Random Forest) on land- area trends to forecast future production spikes. 
 - Climate Integration: Match the 2014 data crash with rainfall data to check for impacts of drought. Dashboard Deployment: Convert this static Python analysis to an interactive web app using Streamlit for real-time policy monitoring. 
 16 
+
