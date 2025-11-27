@@ -1,16 +1,17 @@
-﻿Project Report ![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.001.png)
+﻿Project Report
 
-**Analysis of Agriculture Crop Production in India** A Data-Driven Approach Using Python 
+**Analysis of Agriculture Crop Production in India** 
+A Data-Driven Approach Using Python 
 
 Course No.: MM62201 
-
 Course Title: Introduction to Programming 
 
 Submitted by: 
 
-Aryan Bajia (25AG61R02) Suyash Gadage (25AG61R03) 
+Aryan Bajia (25AG61R02) 
+Suyash Gadage (25AG61R03) 
 
-![](Aspose.Words.564a9be0-04ac-49c1-acb8-3e673a95c7f1.002.png)
+![](IIT.png)
 
 Indian Institute of Technology Kharagpur 
 
@@ -25,9 +26,10 @@ Through this project, we explored how programming and data science techniques, s
 This project would not have been possible without the collective support and guidance of our professor  and  teaching  assistants.  Their  dedication  and  encouragement  have  not  only strengthened our technical abilities but also instilled in us a passion for solving practical problems through programming and data analysis. 
 
 1. Aryan Bajiya (25AG61R02) 
-1. Suyash Gadage (25AG61R03) 
+2. Suyash Gadage (25AG61R03) 
 
-Date: 27/11/2025 Place: IIT Kharagpur 
+Date: 27/11/2025 
+Place: IIT Kharagpur 
 
 **Table of Contents** 
 
@@ -74,7 +76,7 @@ Date: 27/11/2025 Place: IIT Kharagpur
 |4\.7 |Total Index Growth |14 |
 |4\.8 |Total Index Growth (Trend) |15 |
 
-iii 
+
 
 **Chapter 1: Introduction** 
 
@@ -389,4 +391,5 @@ Future Scope:
 - Predictive Modelling: Employing machine learning (example: Random Forest) on land- area trends to forecast future production spikes. 
 - Climate Integration: Match the 2014 data crash with rainfall data to check for impacts of drought. Dashboard Deployment: Convert this static Python analysis to an interactive web app using Streamlit for real-time policy monitoring. 
 16 
+
 
