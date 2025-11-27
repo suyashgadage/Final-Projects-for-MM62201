@@ -130,18 +130,17 @@ There are five distinct files within the Agriculture Dataset, each with a differ
 Code Implementation: 
 
 First, the code reads the datasets into a dictionary of DataFrames. Following this, we provide a function for general cleaning: it removes extra spaces from column names, such as renaming "State " to "State"; and it also removes duplicate rows. For missing values, in particular in the time-series data (Dataset 5) and in the varieties data (Dataset 3), we fill gaps to avoid errors when aggregating. 
+```
+def clean_dataset_5(df):
+ # Standardize Column Names
+ df.columns = df.columns.str.strip()
 
-def clean\_dataset\_5(df):
-
-- Standardize Column Names df.columns = df.columns.str.strip()
-- Fill Missing Values
-- Since this is a time series, empty usually means "no data recorded".
-- We fill with 0 so we can calculate averages/sums without errors.
-
-  df = df.fillna(0)
-
-  return df
-
+ # Fill Missing Values
+ # Since this is a time series, empty usually means "no data recorded".
+ # We fill with 0 so we can calculate averages/sums without errors.
+ df = df.fillna(0)
+ return df
+```
 Outcome: 
 
 After handling the missing values, the resulting datasets are robust and free from null pointers; this is assured during the inspection phase. This ensures that calculations for "All-Time Highs" or "Average Costs" do not fail due to sparse data. 
@@ -157,24 +156,20 @@ We implemented specific cleaning functions for each dataset:
 - Cost Dataset 1: Rename complicated columns like Cost of Cultivation (/Hectare) C2 to Cost\_C2 for easy access. 
 - Dataset 2 (Production): Removes rows in which the 'Crop' column begins with 'Total'. 
 - Dataset 4 - Indices: Converts year columns, like "3-1993", to a consistent format of Year\_1993 and forces numeric conversion to handle any non-numeric artefacts. 
-
-def clean\_dataset\_1(df):
-
-""" 
-
-Renames complex column names to simple coding-friendly names. """ 
-
-new\_names = {
-
-'Cost of Cultivation ( /Hectare) A2+FL': 'Cost\_A2\_FL', 'Cost of Cultivation ( /Hectare) C2': 'Cost\_C2',
-
-'Cost of Production ( /Quintal) C2': 'Production\_Cost', 'Yield (Quintal/ Hectare)': 'Yield'
-
-} 
-
-df = df.rename(columns=new\_names)
-
-return df
+```
+def clean_dataset_1(df):
+ """
+ Renames complex column names to simple coding-friendly names.
+ """
+ new_names = {
+ 'Cost of Cultivation (`/Hectare) A2+FL': 'Cost_A2_FL',
+ 'Cost of Cultivation (`/Hectare) C2': 'Cost_C2',
+ 'Cost of Production (`/Quintal) C2': 'Production_Cost',
+ 'Yield (Quintal/ Hectare)': 'Yield'
+ }
+ df = df.rename(columns=new_names)
+ return df
+```
 
 Outcome: 
 
@@ -196,19 +191,17 @@ For this analysis, we selected the following three main characteristics of EDA:
 Code Implementation: 
 
 We analyse Dataset 1 to compute the summary statistics related to the Cost of Cultivation and Yield. The code identifies the crop with the maximum Cost\_C2 and the crop with the highest yield. 
+```
+ def analyze_dataset_1(df):
+ # Summary Statistics
+ summary = df[['Cost_A2_FL', 'Cost_C2', 'Yield']].describe()
 
-def analyze\_dataset\_1(df):
+ # Most Expensive Crop (Cost C2)
+ max_cost_row = df.loc[df['Cost_C2'].idxmax()]
 
-- Summary Statistics
-
-summary = df[['Cost\_A2\_FL', 'Cost\_C2', 'Yield']].describe()
-
-- Most Expensive Crop (Cost C2)
-
-max\_cost\_row = df.loc[df['Cost\_C2'].idxmax()]
-
-- Highest Yielding State & Crop max\_yield\_row = df.loc[df['Yield'].idxmax()]
-
+ # Highest Yielding State & Crop
+ max_yield_row = df.loc[df['Yield'].idxmax()]
+```
 Outcome: 
 
 The statistical analysis shows clear economic profiles for crops: 
@@ -221,25 +214,18 @@ The statistical analysis shows clear economic profiles for crops:
 Code Implementation: 
 
 We compute the percentage growth of land area and the absolute growth of sectoral indices using Dataset 2 (Production) and Dataset 4 (Indices) to understand the drivers behind the production spikes and sectoral shifts. 
+```
+def analyze_dataset_2(df):
+    # Calculate Percentage Growth in Area (2006-07 to 2010-11)
+    df['Area_Growth'] = ((df['Area_2010_11'] - df['Area_2006_07']) / df['Area_2006_07']) * 100
+    fastest_growth = df.sort_values(by='Area_Growth', ascending=False).iloc[0]
+    print(f"Fastest Expanding Crop: {fastest_growth['Crop']}")
 
-def analyze\_dataset\_2(df):
-
-- Calculate Percentage Growth in Area (2006-07 to 2010-11) df['Area\_Growth']  =  ((df['Area\_2010\_11']  -  df['Area\_2006\_07'])  / 
-
-df['Area\_2006\_07']) \* 100
-
-fastest\_growth  =  df.sort\_values(by='Area\_Growth', ascending=False).iloc[0]
-
-print(f"Fastest Expanding Crop: {fastest\_growth['Crop']}")
-
-def analyze\_dataset\_4(df):
-
-- Calculate Total Growth (Last Year - First Year)
-
-df['Total\_Growth'] = df[last\_year] - df[first\_year]
-
-fastest\_sector  =  df.sort\_values(by='Total\_Growth', ascending=False).iloc[0]
-
+def analyze_dataset_4(df):
+    # Calculate Total Growth (Last Year - First Year)
+    df['Total_Growth'] = df[last_year] - df[first_year]
+    fastest_sector = df.sort_values(by='Total_Growth', ascending=False).iloc[0]
+```
 Outcome:  
 
 - Production Boom: The analysis identifies Onion as having the highest single-year production volume in 2010-11 (409.1 Units).  
@@ -271,13 +257,12 @@ Fig 4.1. Average Cost of Cultivation
 Fig 4.2. Top High-Yielding Crops & their States Code Implementation: 
 
 We visualise the average Cost\_C2 for each crop using Seaborn's barplot. 
-
-def plot\_dataset\_1(df):
-
-plt.figure(figsize=(12, 6))
-
-sns.barplot(data=df, x='Crop', y='Cost\_C2', palette='viridis') plt.title('Average Cost of Cultivation (C2) by Crop')
-
+```
+def plot_dataset_1(df):
+    plt.figure(figsize=(12, 6))
+    sns.barplot(data=df, x='Crop', y='Cost_C2', palette='viridis')
+    plt.title('Average Cost of Cultivation (C2) by Crop')
+```
 Outcome:  
 
 These bar charts demonstrate a large inequality  in  capital  requirements.  Sugarcane is  an outright aberration, requiring from 3x to 4x more capital than Wheat or Gram. Further, state- wise  yield  plots  place Tamil  Nadu  and  Karnataka  well  above  Uttar  Pradesh  in  terms  of efficiency and visually reinforce the statistical findings presented in Chapter 3. 
@@ -289,12 +274,13 @@ A time-based visualisation of data is key to finding trends, spikes, or anomalie
 Code Implementation: 
 
 We create line plots for the Top 3 crops based on all-time high production to observe trends. 
-
-def plot\_dataset\_2(df):
-
-- Plots Trends (All Years) for Production, Area, and Yield.
-- Selects Top 3 based on their ALL-TIME Highest value. sns.lineplot(data=melted, x='Year', y='Production', hue='Crop') plt.title('Top 3 Crops (All-Time): Production Trend')
-
+```
+def plot_dataset_2(df):
+    # Plots Trends (All Years) for Production, Area, and Yield.
+    # Selects Top 3 based on their ALL-TIME Highest value.
+    sns.lineplot(data=melted, x='Year', y='Production', hue='Crop')
+    plt.title('Top 3 Crops (All-Time): Production Trend')
+```
 ![](Dataset2_Production_Top3.png)
 
 ![](Dataset2_Production_Bottom3.png)
@@ -334,19 +320,15 @@ Fig 4.7. Total Index Growth
 Fig 4.8. Total Index Growth (Trend) Code Implementation: 
 
 For indices, we use line charts; for variety counts, we use bar charts. 
+```
+def plot_dataset_3(df):
+    # Bar Chart showing the Number of Varieties per Crop.
+    sns.barplot(data=plot_data, x='Crop', y='Variety_Count', palette='icefire')
 
-def plot\_dataset\_3(df):
-
-- Bar Chart showing the Number of Varieties per Crop. sns.barplot(data=plot\_data,  x='Crop',  y='Variety\_Count', 
-
-palette='icefire')
-
-def plot\_dataset\_4(df):
-
-- Trend Line Chart (All Sectors)
-
-sns.lineplot(data=df\_melted, x='Year', y='Index\_Value', hue='Crop')
-
+def plot_dataset_4(df):
+    # Trend Line Chart (All Sectors)
+    sns.lineplot(data=df_melted, x='Year', y='Index_Value', hue='Crop')
+```
 Outcome:  
 
 Genetic Gap: The varieties' bar chart shows an alarming unevenness. Wheat and Paddy are represented by long bars (9 and 8 varieties), while Sesame and Lentil have bars barely reaching out of the x-axis (1 or 2). This visualises the "Genetic Monoculture" risk.  
@@ -391,5 +373,6 @@ Future Scope:
 - Predictive Modelling: Employing machine learning (example: Random Forest) on land- area trends to forecast future production spikes. 
 - Climate Integration: Match the 2014 data crash with rainfall data to check for impacts of drought. Dashboard Deployment: Convert this static Python analysis to an interactive web app using Streamlit for real-time policy monitoring. 
 16 
+
 
 
